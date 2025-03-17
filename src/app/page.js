@@ -2,6 +2,7 @@
 // File: pages/index.js
 import { useEffect, useState } from 'react';
 import Head from 'next/head';
+import Image from 'next/image'; // Add Next.js Image component
 
 export default function Home() {
   const [deferredPrompt, setDeferredPrompt] = useState(null);
@@ -93,10 +94,15 @@ export default function Home() {
         <h1 className="title">Simple PWA App</h1>
 
         <div className="image-container">
-          <img
-            src="ladybug.jpg"
+          {/* Replace standard img with Next.js Image component */}
+          <Image
+            src="/ladybug.jpg"
             alt="PWA Demo Image"
+            width={400}
+            height={300}
             className="demo-image"
+            priority
+            quality={80}
           />
         </div>
 
@@ -120,6 +126,7 @@ export default function Home() {
         </div>
       </main>
 
+      {/* CSS remains the same but will be optimized by Next.js in production */}
       <style jsx>{`
         .container {
           min-height: 100vh;
