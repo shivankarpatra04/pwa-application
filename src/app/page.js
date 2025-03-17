@@ -396,6 +396,7 @@ export default function Home() {
           display: flex;
           justify-content: center;
           align-items: center;
+          overflow-x: hidden;
         }
 
         * {
@@ -408,6 +409,41 @@ export default function Home() {
           display: flex;
           justify-content: center;
           align-items: center;
+        }
+        
+        /* Add landscape mode specific styles */
+        @media screen and (orientation: landscape) {
+          .container {
+            padding: 0.5rem !important;
+            min-height: 100vh !important;
+            width: 100vw !important;
+            max-width: 100vw !important;
+            overflow-x: hidden !important;
+          }
+          
+          .main {
+            padding: 1.5rem 1rem !important;
+            max-width: 90vw !important;
+          }
+          
+          .image-container {
+            max-width: 300px !important;
+          }
+          
+          .title {
+            font-size: 2rem !important;
+            margin: 0 0 1rem !important;
+          }
+          
+          .buttons {
+            flex-direction: row !important;
+            max-width: 500px !important;
+          }
+          
+          .ios-notification {
+            top: 10px !important;
+            max-width: 80vw !important;
+          }
         }
       `}</style>
     </div>
